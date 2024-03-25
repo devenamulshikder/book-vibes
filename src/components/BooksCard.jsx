@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { CiStar, CiStopSign1 } from "react-icons/ci";
 
 const BooksCard = () => {
   const [data, setData] = useState([]);
@@ -30,8 +31,16 @@ const BooksCard = () => {
                 </div>
                 <div className="card-body">
                   <h2 className="card-title">{book.bookName}</h2>
-                  <div className="card-actions">
-                    <button className="btn btn-primary">Buy Now</button>
+                  <p className="work-sans opacity-70 font-medium">
+                    By: {book.author}
+                  </p>
+                  <div className="divider"></div>
+                  <div className="flex justify-between text-xl">
+                    <p>Fiction</p>
+                    <span className="flex items-center gap-2">
+                      {book.rating}
+                      <CiStar></CiStar>
+                    </span>
                   </div>
                 </div>
               </div>
