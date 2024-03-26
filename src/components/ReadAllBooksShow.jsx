@@ -1,38 +1,77 @@
 /* eslint-disable react/prop-types */
+import { GoLocation } from "react-icons/go";
+import { FaUserInjured } from "react-icons/fa6";
+import { RiPageSeparator } from "react-icons/ri";
+import { Link } from "react-router-dom";
+
 const ReadAllBooksShow = ({ readGet }) => {
     console.log(readGet);
   return (
     <>
-      {readGet.map((book) => {
+      {readGet.map((read) => {
         return (
           <div
-            key={book.bookId}
-            className="flex flex-col items-start gap-5 lg:gap-10 lg:flex-row border rounded-xl p-5 h-fit shadow-md"
+            key={read.bookId}
+            className="flex flex-col items-start gap-5 lg:gap-16 lg:flex-row border rounded-xl p-5 h-fit shadow-md mb-4 lg:mb-8"
           >
             <div className="px-5 lg:px-10 py-3 lg:py-10 bg-[#F3F3F3]">
-              <img className="w-[150px] h-[200px]" src={book.image} />
+              <img className="w-[150px] h-[200px]" src={read.image} />
             </div>
             <div>
               <h1 className="text-2xl lg:text-3xl font-bold my-3 lg:my-5">
-                {book.bookName}
+                {read.bookName}
               </h1>
-              <p className="font-semibold text-sm lg:text-lg">
-                By: {book.author}
+              <p className="font-semibold text-sm lg:text-lg work-sans opacity-80">
+                By: {read.author}
               </p>
-              <div className="flex gap-2 lg:gap-5 mt-5 text-[#23BE0A] :px-1 *:py-1 lg::px-3 lg:*:py-2 *:rounded-full *:bg-[#23BE0A0D] *:font-medium *:text-lg">
-                <p className="text-black bg-none border-none px-0 py-0">
-                  Tags:
-                </p>
-                <p>{book.tags[0]}</p>
-                <p>{book.tags[1]}</p>
+
+              {/* tag */}
+              <div className="flex flex-col lg:flex-row gap-5 items-center mt-4">
+                <div className="text-lg font-bold work-sans">Tag</div>
+                <div className="bg-gray-100 font-semibold text-[#23BE0A] px-4 rounded-full work-sans">
+                  #{read.tags[0]}
+                </div>
+                <div className="bg-gray-100 font-semibold text-[#23BE0A] px-4 rounded-full work-sans">
+                  #{read.tags[1]}
+                </div>
+                <div className="flex gap-2 items-center work-sans font-medium opacity-80    ">
+                  <div>
+                    <GoLocation />
+                  </div>
+                  <div>Year of Publishing: {read.yearOfPublishing}</div>
+                </div>
               </div>
-              <div className="flex gap-3 mt-5 font-bold items-center">
-                <p className="text-xl">Ratings: {book.rating}</p>
-                {/* <FaRegStar size={18} /> */}
+
+              {/* page, and publisher */}
+
+              <div className="flex  gap-3 items-center mt-4 work-sans font-medium opacity-80">
+                <div>
+                  <FaUserInjured />
+                </div>
+                <div>Publisher: {read.publisher}</div>
+                <div>
+                  <RiPageSeparator />
+                </div>
+                <div>Page: {read.totalPages}</div>
               </div>
-              <button className="px-8 py-2 mt-3 text-white font-bold text-lg bg-[#23BE0A] hover:bg-[#22be0aac] hover:text-black rounded-lg">
-                Add to Wishlist
-              </button>
+              <div className="divider"></div>
+              <div className="flex flex-col lg:flex-row gap-4">
+                <div>
+                  <Link className="bg-blue-100 text-blue-500 rounded-full px-4 work-sans">
+                    Category: {read.category}
+                  </Link>
+                </div>
+                <div>
+                  <Link className="bg-orange-100 rounded-full px-4 work-sans text-orange-400">
+                    Ratings: {read.rating}
+                  </Link>
+                </div>
+                <div>
+                  <Link className="bg-[#23BE0A] rounded-full px-4 py-2 text-white work-sans">
+                    View Details
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         );
