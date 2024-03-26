@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { CiStar } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 const BooksCard = () => {
   const [data, setData] = useState([]);
@@ -16,7 +17,7 @@ const BooksCard = () => {
         {data.map((book, idx) => {
           // console.log(book);
           return (
-            <div key={idx}>
+            <Link to={`/details-books/${book.bookId}`} key={idx}>
               <div className="card bg-base-100 shadow-xl">
                 <figure className="px-10 pt-10">
                   <img src={book.image} alt="Shoes" className="rounded-xl" />
@@ -44,7 +45,7 @@ const BooksCard = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>
