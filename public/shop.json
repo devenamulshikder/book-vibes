@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Whimsical Words Book Emporium",
+    "location": "123 Enchanted Lane, Fairyland City",
+    "picture": "https://i.postimg.cc/g0skfY94/asia-culturecenter-G92t-Qzil0d-I-unsplash.jpg",
+    "id": "WBE123",
+    "address": "123 Enchanted Lane, Fairyland City",
+    "ratings": "4.8/5 (Based on 5000 reviews)"
+  },
+  {
+    "name": "Mystic Pages Literary Haven",
+    "location": "789 Arcane Avenue, Enigma Town",
+    "picture": "https://i.postimg.cc/BbX6TRVp/cristina-gottardi-8h-JQKRIQZMY-unsplash.jpg",
+    "id": "MPLH789",
+    "address": "789 Arcane Avenue, Enigma Town",
+    "ratings": "4.7/5 (Based on 4500 reviews)"
+  },
+  {
+    "name": "Galactic Tomes Universe",
+    "location": "456 Intergalactic Boulevard, Cosmos City",
+    "picture": "https://i.postimg.cc/ydNYKwsK/garvit-nama-v-PTX-V13-B44-unsplash.jpg",
+    "id": "GTU456",
+    "address": "456 Intergalactic Boulevard, Cosmos City",
+    "ratings": "4.9/5 (Based on 5500 reviews)"
+  },
+  {
+    "name": "Chronicles & Curiosities Book Nook",
+    "location": "101 Wonderland Way, Whimsy Village",
+    "picture": "https://i.postimg.cc/3N484mkb/nick-fewings-f2-Bi-VBs71-M-unsplash.jpg",
+    "id": "CCBN101",
+    "address": "101 Wonderland Way, Whimsy Village",
+    "ratings": "4.6/5 (Based on 4000 reviews)"
+  },
+  {
+    "name": "Ethereal Volumes Literary Lounge",
+    "location": "666 Ether Lane, Twilight Town",
+    "picture": "https://i.postimg.cc/MKBZz02n/vlad-patana-r-Ei-Vs-Krcv-VE-unsplash.jpg",
+    "id": "EVLL666",
+    "address": "666 Ether Lane, Twilight Town",
+    "ratings": "4.8/5 (Based on 4800 reviews)"
+  }
+]
