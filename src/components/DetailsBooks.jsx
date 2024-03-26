@@ -52,6 +52,8 @@ const DetailsBooks = () => {
     localStorage.setItem(read, JSON.stringify(toRead));
   };
 
+  
+
   const {
     bookId,
     bookName,

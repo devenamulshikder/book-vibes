@@ -1,14 +1,9 @@
-import { useLoaderData } from "react-router-dom";
-import { FaRegStar } from "react-icons/fa";
-const ReadBooks = () => {
-  const topBooks = useLoaderData();
-
+/* eslint-disable react/prop-types */
+const ReadAllBooksShow = ({ readGet }) => {
+    console.log(readGet);
   return (
-    <div className="space-y-5 lg:space-y-10">
-      <h1 className="text-2xl lg:text-5xl font-bold text-center mt-8">
-        The Famous Book List Here
-      </h1>
-      {topBooks.map((book) => {
+    <>
+      {readGet.map((book) => {
         return (
           <div
             key={book.bookId}
@@ -33,7 +28,7 @@ const ReadBooks = () => {
               </div>
               <div className="flex gap-3 mt-5 font-bold items-center">
                 <p className="text-xl">Ratings: {book.rating}</p>
-                <FaRegStar size={18} />
+                {/* <FaRegStar size={18} /> */}
               </div>
               <button className="px-8 py-2 mt-3 text-white font-bold text-lg bg-[#23BE0A] hover:bg-[#22be0aac] hover:text-black rounded-lg">
                 Add to Wishlist
@@ -42,8 +37,8 @@ const ReadBooks = () => {
           </div>
         );
       })}
-    </div>
+    </>
   );
 };
 
-export default ReadBooks;
+export default ReadAllBooksShow

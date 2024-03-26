@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import ReadAllBooksShow from "../components/ReadAllBooksShow";
 // import ReadBooks from "../components/ReadBooks";
 
 const ListedBooks = () => {
   const [tabIndex, setTabIndex] = useState(0);
+  const readGet = JSON.parse(localStorage.getItem("read"))||[];
+  
 
   return (
     <div>
@@ -40,6 +43,7 @@ const ListedBooks = () => {
           <Tab>Wishlist Books</Tab>
         </TabList>
         <TabPanel>
+          <ReadAllBooksShow readGet={readGet}></ReadAllBooksShow>
         </TabPanel>
         <TabPanel></TabPanel>
       </Tabs>

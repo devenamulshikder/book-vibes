@@ -67,7 +67,7 @@ const Nav = () => {
                 : "font-bold"
             }
           >
-            Top Books List
+            Famous Book List
           </NavLink>
         </ul>
       </div>
