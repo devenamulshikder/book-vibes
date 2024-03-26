@@ -71,7 +71,7 @@ const Nav = () => {
           </NavLink>
 
           <NavLink
-            to="/top-books"
+            to="/book-shop"
             className={({ isActive }) =>
               isActive
                 ? "btn btn-outline btn-success font-bold text-lg"

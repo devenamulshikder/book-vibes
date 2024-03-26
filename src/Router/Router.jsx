@@ -6,6 +6,7 @@ import ListedBooks from "../Pages/ListedBooks";
 import PagesToRead from "../Pages/PagesToRead";
 import DetailsBooks from "../components/DetailsBooks";
 import ReadBooks from "../components/ReadBooks";
+import BookShop from "../Pages/BookShop";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
         path:'/top-books',
         loader:()=>fetch('../readBook.json'),
         element:<ReadBooks></ReadBooks>
+      },
+      {
+        path:'/book-shop',
+        loader:()=>fetch('../shop.json'),
+        element:<BookShop></BookShop>
       }
     ],
   },
