@@ -1,4 +1,4 @@
-
+import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   return (
@@ -21,45 +21,46 @@ const Nav = () => {
               />
             </svg>
           </div>
-          {/* <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
-          </ul> */}
         </div>
-        <a className="btn btn-ghost text-2xl font-extrabold">Book Vibe</a>
+        <a className="btn btn-ghost text-2xl font-extrabold work-sans">
+          Book Vibe
+        </a>
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <a>Home</a>
-          </li>
-          <li>
-            <a>Listed Books</a>
-          </li>
-          <li>
-            <a>Pages to Read</a>
-          </li>
+      <div className="navbar-center hidden lg:flex ">
+        <ul className="menu menu-horizontal px-1 flex gap-10 text-lg items-center work-sans">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive
+                ? "btn btn-outline btn-success font-bold text-lg"
+                : "font-bold"
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/listed-books"
+            className={({ isActive }) =>
+              isActive
+                ? "btn btn-outline btn-success font-bold text-lg"
+                : "font-bold"
+            }
+          >
+            Listed Books
+          </NavLink>
+          <NavLink
+            to="/pages-read"
+            className={({ isActive }) =>
+              isActive
+                ? "btn btn-outline btn-success font-bold text-lg"
+                : "font-bold"
+            }
+          >
+            Pages to Read
+          </NavLink>
         </ul>
       </div>
-      <div className="navbar-end gap-3">
+      <div className="navbar-end gap-3 work-sans">
         <a className="btn bg-[#23BE0A] text-white text-xl">Sign in</a>
         <a className="btn bg-[#59C6D2] text-white text-xl">Sign up</a>
       </div>

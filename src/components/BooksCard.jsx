@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CiStar, CiStopSign1 } from "react-icons/ci";
+import { CiStar } from "react-icons/ci";
 
 const BooksCard = () => {
   const [data, setData] = useState([]);
@@ -14,7 +14,7 @@ const BooksCard = () => {
 
       <div className="grid grid-cols-3 gap-10">
         {data.map((book, idx) => {
-          console.log(book);
+          // console.log(book);
           return (
             <div key={idx}>
               <div className="card bg-base-100 shadow-xl">
@@ -22,21 +22,21 @@ const BooksCard = () => {
                   <img src={book.image} alt="Shoes" className="rounded-xl" />
                 </figure>
                 <div className="flex gap-10 ml-2 mt-4">
-                  <button className="bg-gray-100 font-semibold text-lg text-[#23BE0A] px-4 rounded-full">
+                  <button className="bg-gray-100 font-semibold text-lg text-[#23BE0A] px-4 rounded-full work-sans">
                     {book.tags[0]}
                   </button>
-                  <button className="bg-gray-100 font-semibold text-lg text-[#23BE0A] px-4 rounded-full">
+                  <button className="bg-gray-100 font-semibold text-lg text-[#23BE0A] px-4 rounded-full work-sans">
                     {book.tags[1]}
                   </button>
                 </div>
                 <div className="card-body">
-                  <h2 className="card-title">{book.bookName}</h2>
+                  <h2 className="card-title text-2xl">{book.bookName}</h2>
                   <p className="work-sans opacity-70 font-medium">
                     By: {book.author}
                   </p>
                   <div className="divider"></div>
-                  <div className="flex justify-between text-xl">
-                    <p>Fiction</p>
+                  <div className="flex justify-between text-xl work-sans">
+                    <p>{book.category}</p>
                     <span className="flex items-center gap-2">
                       {book.rating}
                       <CiStar></CiStar>
