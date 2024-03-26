@@ -58,6 +58,17 @@ const Nav = () => {
           >
             Pages to Read
           </NavLink>
+
+          <NavLink
+            to="/top-books"
+            className={({ isActive }) =>
+              isActive
+                ? "btn btn-outline btn-success font-bold text-lg"
+                : "font-bold"
+            }
+          >
+            Top Books List
+          </NavLink>
         </ul>
       </div>
       <div className="navbar-end gap-3 work-sans">

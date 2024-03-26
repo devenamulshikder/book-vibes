@@ -1,0 +1,72 @@
+[
+  {
+    "bookId": 1,
+    "bookName": "The Hunger Games",
+    "author": "Suzanne Collins",
+    "image": "https://i.postimg.cc/zBkZLyvY/the-hunger.jpg",
+    "rating": 4.5,
+    "category": "Young Adult",
+    "tags": ["Dystopian", "Adventure"],
+    "totalPages": 374
+  },
+  {
+    "bookId": 2,
+    "bookName": "Harry Potter and the Sorcerer's Stone",
+    "author": "J.K. Rowling",
+    "image": "https://i.postimg.cc/bNVPHSTz/harry-potter.jpg",
+    "rating": 4.8,
+    "category": "Fantasy",
+    "tags": ["Magic", "Friendship"],
+    "totalPages": 320
+  },
+  {
+    "bookId": 3,
+    "bookName": "The Fault in Our Stars",
+    "author": "John Green",
+    "image": "https://i.postimg.cc/tC4yxNFS/fault-in-our.jpg",
+    "rating": 4.3,
+    "category": "Young Adult",
+    "tags": ["Romance", "Illness"],
+    "totalPages": 313
+  },
+  {
+    "bookId": 4,
+    "bookName": "The Lord of the Rings: The Fellowship of the Ring",
+    "author": "J.R.R. Tolkien",
+    "image": "https://i.postimg.cc/Hxm1swpt/loard-of-the-rings.jpg",
+    "rating": 4.6,
+    "category": "Fantasy",
+    "tags": ["Adventure", "Epic"],
+    "totalPages": 432
+  },
+  {
+    "bookId": 5,
+    "bookName": "The Girl on the Train",
+    "author": "Paula Hawkins",
+    "image": "https://i.postimg.cc/3xyTLrS2/the-girl-on-the-train.webp",
+    "rating": 4.9,
+    "category": "Thriller",
+    "tags": ["Mystery", "Psychological"],
+    "totalPages": 336
+  },
+  {
+    "bookId": 6,
+    "bookName": "The Martian",
+    "author": "Andy Weir",
+    "image": "https://i.postimg.cc/fR6h14pp/martian-cover.webp",
+    "rating": 4.4,
+    "category": "Science Fiction",
+    "tags": ["Survival", "Adventure"],
+    "totalPages": 369
+  },
+  {
+    "bookId": 7,
+    "bookName": "Gone with the Wind",
+    "author": "Margaret Mitchell",
+    "image": "https://i.postimg.cc/PqYkj3kx/gone-with.jpg",
+    "rating": 4.2,
+    "category": "Historical Fiction",
+    "tags": ["Romance", "Civil War"],
+    "totalPages": 1037
+  }
+]
