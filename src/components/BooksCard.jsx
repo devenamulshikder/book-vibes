@@ -13,7 +13,7 @@ const BooksCard = () => {
     <div className="mt-16">
       <h2 className="text-5xl font-bold text-center">Books</h2>
 
-      <div className="grid grid-cols-3 gap-10">
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-10">
         {data.map((book, idx) => {
           // console.log(book);
           return (

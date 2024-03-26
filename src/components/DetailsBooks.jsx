@@ -1,11 +1,57 @@
 /* eslint-disable no-unused-vars */
+import { useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const DetailsBooks = () => {
+  const [addToWishlist, setAddToWishlist] = useState(false);
+
+  const [addRead, setAddRead] = useState(false);
+
   const { id } = useParams();
   const books = useLoaderData();
   const book = books.find((pera) => pera.bookId === parseInt(id));
-  console.log(book);
+
+  // wishlist function
+
+  const handleWishlist = () => {
+    if (!addToWishlist) {
+     if (!addRead) {
+        addToLocalStorage('key', book);
+        setAddToWishlist(true);
+        toast.success('This Book Added Wish listed Successfully')
+     } else{
+        toast.warning('Book is Already Read So You Can not wish listed added')
+     }
+    }   
+    else {
+      toast.warning("This Book Already Added in Wishlist!!");
+    }
+  };
+
+  const addToLocalStorage = (key, book) => {
+    const item = JSON.parse(localStorage.getItem(key)) || [];
+    item.push(book);
+    localStorage.setItem(key, JSON.stringify(item));
+  };
+
+  //   rad button function
+  const handleRead = () => {
+    if (!addRead) {
+      addToRead("read", book);
+      setAddRead(true);
+      toast.success("Read Successes Fully");
+    } else {
+      toast.warning("Already Read This Book");
+    }
+  };
+
+  const addToRead = (read, readBook) => {
+    const toRead = JSON.parse(localStorage.getItem(read)) || [];
+    toRead.push(readBook);
+    localStorage.setItem(read, JSON.stringify(toRead));
+  };
+
   const {
     bookId,
     bookName,
@@ -20,7 +66,7 @@ const DetailsBooks = () => {
     yearOfPublishing,
   } = book;
   return (
-    <div className="flex lg:gap-20 mt-16">
+    <div className="flex lg:flex-row flex-col lg:gap-20 mt-4 lg:mt-16 p-4 lg:p-0">
       <div className=" flex flex-1 justify-center items-center bg-base-200 p-10 rounded-xl">
         <img className="w-6/12" src={image} alt="" />
         {/* image */}
@@ -64,9 +110,16 @@ const DetailsBooks = () => {
             <div>{rating}</div>
           </div>
         </div>
-        <div className="flex gap-6 work-sans">
-          <button className="btn">Read</button>
-          <button className="btn btn-info text-black">Wishlist</button>
+        <div className="flex gap-6 work-sans text-lg">
+          <button onClick={handleRead} className="btn">
+            Read
+          </button>
+          <button
+            onClick={handleWishlist}
+            className="btn bg-[#59C6D2] text-white"
+          >
+            Wishlist
+          </button>
         </div>
       </div>
     </div>
