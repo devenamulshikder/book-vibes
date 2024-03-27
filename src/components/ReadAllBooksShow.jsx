@@ -4,10 +4,10 @@ import { FaUserInjured } from "react-icons/fa6";
 import { RiPageSeparator } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
-const ReadAllBooksShow = ({ readGet }) => {
+const ReadAllBooksShow = ({ handleSortReadItem }) => {
   return (
     <>
-      {readGet.map((read) => {
+      {handleSortReadItem().map((read) => {
         return (
           <div
             key={read.bookId}

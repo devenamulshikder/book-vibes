@@ -7,10 +7,43 @@ import WishlistBooks from "../components/WishlistBooks";
 
 const ListedBooks = () => {
   const [tabIndex, setTabIndex] = useState(0);
-  const readGet = JSON.parse(localStorage.getItem("read"))||[];
 
-  const wishlistGet = JSON.parse(localStorage.getItem('key'))||[];
-  
+  const readGet = JSON.parse(localStorage.getItem("read")) || [];
+
+  const wishlistGet = JSON.parse(localStorage.getItem("key")) || [];
+
+  const [sortOption, setSortOption] = useState(null);
+
+  const handleSort = (option) => {
+    setSortOption(option);
+  };
+  const handleSortReadItem = () => {
+    if (sortOption === "Rating") {
+      return readGet.slice().sort((a, b) => b.rating - a.rating);
+    } else if (sortOption === "Number of Pages") {
+      return readGet.slice().sort((a, b) => b.totalPages - a.totalPages);
+    } else if (sortOption === "Published year") {
+      return readGet
+        .slice()
+        .sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
+    }
+    return readGet;
+  };
+
+
+
+    const handleSortWishListItem = () => {
+      if (sortOption === "Rating") {
+        return wishlistGet.slice().sort((a, b) => b.rating - a.rating);
+      } else if (sortOption === "Number of Pages") {
+        return wishlistGet.slice().sort((a, b) => b.totalPages - a.totalPages);
+      } else if (sortOption === "Published year") {
+        return wishlistGet
+          .slice()
+          .sort((a, b) => b.yearOfPublishing - a.yearOfPublishing);
+      }
+      return wishlistGet;
+    };
 
   return (
     <div>
@@ -24,17 +57,14 @@ const ListedBooks = () => {
               Sort By
             </summary>
             <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52 work-sans">
-              <li>
-                <a>Sort By</a>
-              </li>
-              <li>
+              <li onClick={() => handleSort("Rating")}>
                 <a>Rating</a>
               </li>
-              <li>
+              <li onClick={() => handleSort("Number of Pages")}>
                 <a>Number of Pages</a>
               </li>
-              <li>
-                <a>Published Date</a>
+              <li onClick={() => handleSort("Published year")}>
+                <a>Published year</a>
               </li>
             </ul>
           </details>
@@ -46,10 +76,14 @@ const ListedBooks = () => {
           <Tab>Wishlist Books</Tab>
         </TabList>
         <TabPanel>
-          <ReadAllBooksShow readGet={readGet}></ReadAllBooksShow>
+          <ReadAllBooksShow
+            handleSortReadItem={handleSortReadItem}
+          ></ReadAllBooksShow>
         </TabPanel>
         <TabPanel>
-          <WishlistBooks wishlistGet={wishlistGet}></WishlistBooks>
+          <WishlistBooks
+            handleSortWishListItem={handleSortWishListItem}
+          ></WishlistBooks>
         </TabPanel>
       </Tabs>
     </div>

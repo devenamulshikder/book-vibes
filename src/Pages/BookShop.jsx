@@ -9,7 +9,7 @@ const BookShop = () => {
 
       <div className=" grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10 p-5 lg:p-0 work-sans">
         {bookShop.map((shop, idx) => {
-          const { name, location, picture, id, address, ratings } = shop;
+          const { name, picture, id, address, ratings } = shop;
           return (
             <div key={idx}>
               <div className="card bg-base-100 shadow-xl">

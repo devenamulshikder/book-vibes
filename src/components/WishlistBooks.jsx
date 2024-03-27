@@ -4,11 +4,10 @@ import { FaUserInjured } from "react-icons/fa6";
 import { RiPageSeparator } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
-const WishlistBooks = ({wishlistGet}) => {
-    console.log(wishlistGet);
+const WishlistBooks = ({ handleSortWishListItem }) => {
   return (
     <>
-      {wishlistGet.map((wish) => {
+      {handleSortWishListItem().map((wish) => {
         return (
           <div
             key={wish.bookId}
